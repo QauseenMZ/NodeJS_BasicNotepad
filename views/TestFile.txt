@@ -1,0 +1,3 @@
+<b>This is Bold Text</b>
+<i>This is Italic Text</i>
+<u>This is Underlined Text</u>

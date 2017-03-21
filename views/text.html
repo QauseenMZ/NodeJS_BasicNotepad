@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <div style="color: #3498DB;font-family: PressStart;font-size: 0.8em;">
+            <p style="text-align: center; font-size: 7em;margin: 20px 0 20px 0;">
+                NotePad</p>
+        </div>
+        <div style="margin-left: 380px; align: center; padding: 50px; border:3px solid #3498DB; border-radius: 25px; width: 600px;">
+        <form id="myForm" action="/text">
+            File Name: <input type="text" name="filename" id="fileName" value="fn"></br></br>
+            <button onclick="bold()">B</button>
+        <button onclick="italic()">I</button>
+        <button onclick="underline()">U</button></br>
+            <textarea id="data" name="data" rows="7" cols="74">Data</textarea></br></br>
+            <input value="Save" type="submit"></br></br>       
+        </form>
+        <hr style="border-top: dotted 1px;" /></br></br>
+        <form>
+            Font Size: <input type="number" name="size"id="size" style="width: 3em;"></br></br>
+            <input type="file" name="uploadFile"></br></br>
+            <input type="submit" value="Upload">
+        </form>
+        </div>
+        <script>
+            function bold(){
+                var area = document.getElementById('data');
+                var sp = area.selectionStart;
+                var ep = area.selectionEnd;
+                var text = area.value;
+                var bt = '<b></b>';
+                var st = text.substring(0, sp);
+                var et = text.substring(sp, text.length);
+                area.value = st + bt + et;
+                area.selectionStart = area.selectionEnd = sp + bt.length;
+                area.focus();
+            }
+            function italic(){
+                var area = document.getElementById('data');
+                var sp = area.selectionStart;
+                var ep = area.selectionEnd;
+                var text = area.value;
+                var bt = '<i></i>';
+                var st = text.substring(0, sp);
+                var et = text.substring(sp, text.length);
+                area.value = st + bt + et;
+                area.selectionStart = area.selectionEnd = sp + bt.length;
+                area.focus();
+            }
+            function underline(){
+                var area = document.getElementById('data');
+                var sp = area.selectionStart;
+                var ep = area.selectionEnd;
+                var text = area.value;
+                var bt = '<u></u>';
+                var st = text.substring(0, sp);
+                var et = text.substring(sp, text.length);
+                area.value = st + bt + et;
+                area.selectionStart = area.selectionEnd = sp + bt.length;
+                area.focus();
+            }
+        </script>
+    </body>
+</html>
